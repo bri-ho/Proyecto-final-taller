@@ -88,8 +88,10 @@ a {
 }
 
 .link {
+    margin-top: 3%;
     padding: 10px 20px;
-    background-color: rgb(145, 84, 49);
+    color: #313340;
+    background-color: #F2C1B6;
     border-radius: 15px;
 }
 

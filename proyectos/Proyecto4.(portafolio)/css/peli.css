@@ -1,0 +1,44 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    background-color: rgb(126, 64, 141);
+    display: flex;
+}
+
+.costado {
+    width: 24vw;
+    height: 100vh;
+    background-color: rgb(117, 34, 128);
+}
+
+.foto {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.b {
+    color: antiquewhite;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.gran {
+    margin-top: 10px;
+}
+
+.titulo {
+    margin-left: 265px;
+}
+
+.trailer {
+    margin-left: 225px;
+    margin-top: 10px;
+}
+
+.texto {
+    width: 1000px;
+    margin-left: 20px;
+}
