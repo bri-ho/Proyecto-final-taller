@@ -9,7 +9,38 @@
 
 <body>
     <div class="conatenedor">
-
+        <div class="box">
+            <h2>CLASE</h2>
+            <p>>?php <br> class Cafetera{ <br> private $capacidadMax;<br> private $cantActual; <br><br> public function __construct($cM,$cA){<br> $this->capacidadMax=$cM;
+                <br> $this->cantActual=$cA; <br> }
+                <br><br> public function getCapaMax(){ <br> return $this->capacidadMax;<br> } <br><br> public function getCantAct(){ <br> return $this->cantActual;<br> } <br><br> public function setCapaMax($ncm){<br> $this->capacidadMax = $ncm;<br> }
+                <br><br> public function setCantAct($nca){ <br> $this->cantActual = $nca; <br> } <br><br> public function __toString(){ <br> return "La cantidad actual de la cafetera es ".$this->getCantAct()."\n"; <br> } <br><br> public function llenarCafete(){
+                <br> $this->setCantAct($this->getCapaMax()); <br> } <br><br> public function servirTaza($taza){ <br> if(($this->getCantAct()-$taza)) { <br> echo "No se puede, falta cafe \n";<br> }else{
+                <br> $this->setCantAct($this->getCantAct()-$taza);
+                <br> if($this->getCantAct()$taza){
+                <br> echo "Su taza no va completamente llena... \n";<br> } <br> } <br> } <br> public function vaciarCafete(){ <br> $this->setCantAct(0);
+                <br> } <br><br> public function agregarCafe($c){ <br> if(($this->getCantAct()+$c)>$this->getCapaMax()){ <br> echo "Esa cantidad sobrepasa el limite...\n"; <br> }else{ <br> $this->setCantAct($this->getCantAct()+$c); <br> } <br> } <br> }
+                <br> ?>
+            </p>
+        </div>
+        <div class="box">
+            <h2>TEST</h2>
+            <p>>?php <br> include_once 'cafetera.php'; <br><br> echo "Cual es la capacidad maxima de su cafetera? "; <br> $Cmax=trim(fgets(STDIN));
+                <br> echo "Cual es la cantidad actual de cafe en la cafetera? "; <br> $Cact=trim(fgets(STDIN)); <br> $cafe= new Cafetera($Cmax, $Cact); <br><br> do{ <br> echo "\nSeleccione una opcion: \n1.Llenar cafetera \n2.Servir taza \n3.Vaciar cafetera
+                \n4.Agregar cafe \n0.Salir \n"; <br> $op=trim(fgets(STDIN)); <br> echo "\n"; <br> switch($op){ <br> case 1: <br> $cafe->llenarCafete(); <br> break; <br> case 2: <br> echo "Que capacidad tiene la taza? "; <br> $t=trim(fgets(STDIN));
+                <br> $cafe->servirTaza($t); <br> break; <br> case 3: <br> $cafe->vaciarCafete(); <br> break; <br> case 4:<br> echo "Cuanto cafe va a agregar? (recuerde que su limite es $Cmax) ";<br> $cant=trim(fgets(STDIN));
+                <br> $cafe->agregarCafe($cant);
+                <br> break;
+                <br> case 0:<br> echo "Ok, saliendo del programa...";<br> break;
+                <br> default:
+                <br> echo "ERROR";<br> break;
+                <br> }
+                <br> echo $cafe;<br> }while($op!=0);
+                <br> ?>
+            </p>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 </body>
 
